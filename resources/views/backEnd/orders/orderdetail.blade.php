@@ -29,7 +29,7 @@
                             <td style="vertical-align: middle;">{{$orderdetail->quantity}}</td>
                             <td style="text-align: center; vertical-align: middle;">
                                 <a href="#" class="btn btn-primary btn-mini">Edit</a>
-                                <a href="javascript:" rel="{{$orderdetail->id}}" rel1="delete-order" class="btn btn-danger btn-mini deleteRecord">Delete</a>
+                                <a href="javascript:" rel="{{$orderdetail->order_detail_id}}" rel1="delete-orderdetail" class="btn btn-danger btn-mini deleteRecord">Delete</a>
                             </td>
                         </tr>
                     @endforeach

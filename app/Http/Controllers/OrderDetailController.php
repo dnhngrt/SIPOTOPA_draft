@@ -19,4 +19,11 @@ class OrderDetailController extends Controller
         $orderdetail = OrderDetail_model::all();
         return view('backEnd.orders.orderdetail', compact('menu_active', 'orderdetail'));
     }
+
+    public function destroy($order_detail_id)
+    {
+        $delete=OrderDetail_model::findOrFail($order_detail_id);
+        $delete->delete();
+        return redirect()->route('orders.orderdetail')->with('message','Delete Success!');
+    }
 }
