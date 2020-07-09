@@ -12,7 +12,7 @@
 */
 /* FrontEnd Location */
 Route::get('/', 'IndexController@index');
-Route::get('/payment-confirmation', 'PaymentConfirmController@index');
+Route::resource('/payment-confirmation', 'PaymentConfirmController');
 Route::get('/list-products', 'IndexController@shop');
 Route::get('/cat/{id}', 'IndexController@listByCat')->name('cats');
 Route::get('/product-detail/{id}', 'IndexController@detialpro');
@@ -60,6 +60,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::post('/update-pwd', 'AdminController@updatAdminPwd');
     /// Orders Area
     Route::resource('/orders', 'AdminOrdersController');
+    Route::resource('/orderdetail', 'OrderDetailController');
     Route::get('delete-order/{id}', 'AdminOrdersController@destroy');
     Route::get('change-status/{id}', 'AdminOrdersController@changeStatus');
     /// Category Area
