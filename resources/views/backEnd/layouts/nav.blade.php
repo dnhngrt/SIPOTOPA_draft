@@ -5,6 +5,7 @@
                 <li class="submenu {{$menu_active==2? ' active':''}}"> <a href="#"><i class="icon icon-th-list"></i> <span>Order</span></a>
                     <ul>
                         <li><a href="{{route('orders.index')}}">List Order</a></li>
+                        <li><a href="{{route('orderdetail.index')}}">List Order Detail</a></li>
                     </ul>
                 </li>
                 <li class="submenu {{$menu_active==3? ' active':''}}"> <a href="#"><i class="icon icon-th-list"></i> <span>Categories</span></a>
