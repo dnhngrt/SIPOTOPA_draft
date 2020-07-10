@@ -61,7 +61,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     /// Orders Area
     Route::resource('/orders', 'AdminOrdersController');
     Route::get('delete-order/{id}', 'AdminOrdersController@destroy');
-    Route::get('change-status/{id}', 'AdminOrdersController@changeStatus');
+    Route::get('change-status/{id}', [
+        'uses' => 'AdminOrdersController@changeStatus',
+        'as' => 'change-status'
+    ]);
     /// Category Area
     Route::resource('/category', 'CategoryController');
     Route::get('delete-category/{id}', 'CategoryController@destroy');

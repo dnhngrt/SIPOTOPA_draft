@@ -47,7 +47,7 @@
                             <td style="vertical-align: middle;">{{$order->order_status}}</td>
                             <td style="vertical-align: middle;">{{$order->grand_total}}</td>
                             <td style="text-align: center; vertical-align: middle;">
-                                <a href="#" name="cstatus" class="btn btn-info btn-mini" value="Lunas" type="hidden">Change Status</a>
+                                <a href="{{route('change-status', $order->id)}}" name="cstatus" class="btn btn-info btn-mini" value="Lunas" type="hidden">Change Status</a>
                                 <a href="#" class="btn btn-primary btn-mini">Edit</a>
                                 <a href="javascript:" rel="{{$order->id}}" rel1="delete-order" class="btn btn-danger btn-mini deleteRecord">Delete</a>
                             </td>

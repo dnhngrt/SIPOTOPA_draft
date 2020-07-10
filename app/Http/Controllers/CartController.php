@@ -28,7 +28,7 @@ class CartController extends Controller
         if($inputToCart['size']==""){
             return back()->with('message','Please select Size');
         }else{
-            $stockAvailable=DB::table('product_att')->select('stock','sku')->where(['products_id'=>$inputToCart['products_id'],
+            $stockAvailable=DB::table('product_att')->select('id','stock','sku')->where(['products_id'=>$inputToCart['products_id'],
                 'price'=>$inputToCart['price']])->first();
             if($stockAvailable->stock>=$inputToCart['quantity']){
                 $inputToCart['user_email']=$request->user()->email;
@@ -41,6 +41,8 @@ class CartController extends Controller
                 $sizeAtrr=explode("-",$inputToCart['size']);
                 $inputToCart['size']=$sizeAtrr[1];
                 $inputToCart['product_code']=$stockAvailable->sku;
+                $inputToCart['product_att_id']=$stockAvailable->id;
+
                 $count_duplicateItems=Cart_model::where(['products_id'=>$inputToCart['products_id'],
                     'product_color'=>$inputToCart['product_color'],
                     'size'=>$inputToCart['size']])->count();

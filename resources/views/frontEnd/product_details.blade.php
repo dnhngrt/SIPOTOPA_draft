@@ -47,11 +47,11 @@
                         <p>Code ID: {{$detail_product->p_code}}</p>
                         <span>
                             <select name="size" id="idSize" class="form-control">
-                        	<option value="">Select Size</option>
-                            @foreach($detail_product->attributes as $attrs)
-                                <option value="{{$detail_product->id}}-{{$attrs->size}}">{{$attrs->size}}</option>
-                            @endforeach
-                        </select>
+                                <option value="">Select Size</option>
+                                @foreach($detail_product->attributes as $attrs)
+                                    <option value="{{$detail_product->id}}-{{$attrs->size}}">{{$attrs->size}}</option>
+                                @endforeach
+                            </select>
                         </span><br>
                         <span>
                             <span id="dynamic_price">IDR {{$detail_product->price}}</span>

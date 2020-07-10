@@ -38,6 +38,7 @@ class OrdersController extends Controller
         foreach($cart_datas as $cart_data){
             $order_detail= new OrderDetail_model;
             $order_detail->product_id=$cart_data->products_id;
+            $order_detail->product_att_id=$cart_data->product_att_id;
             $order_detail->quantity=$cart_data->quantity;
             $order_detail->order_id=$order->id;
             $order_detail->save();
