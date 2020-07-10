@@ -12,7 +12,8 @@
 */
 /* FrontEnd Location */
 Route::get('/', 'IndexController@index');
-Route::resource('/payment-confirmation', 'PaymentConfirmController');
+Route::get('/payment-confirmation', 'PaymentConfirmController@index');
+Route::post('/payment-confirm', 'PaymentConfirmController@paymentconfirm');
 Route::get('/list-products', 'IndexController@shop');
 Route::get('/cat/{id}', 'IndexController@listByCat')->name('cats');
 Route::get('/product-detail/{id}', 'IndexController@detialpro');

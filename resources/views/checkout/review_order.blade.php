@@ -134,9 +134,6 @@
                         <span>
                             <label><input type="radio" name="payment_method" value="COD" checked> Bank Transfer</label>
                         </span>
-                            <span>
-                            <label><input type="radio" name="payment_method" value="Paypal"> Paypal</label>
-                        </span>
                             <button type="submit" class="btn btn-primary" style="float: right;">Order Now</button>
                         </div>
                     </section>

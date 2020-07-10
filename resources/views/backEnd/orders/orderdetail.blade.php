@@ -1,7 +1,7 @@
 @extends('backEnd.layouts.master')
-@section('title','List Orders')
+@section('title','List Detail')
 @section('content')
-    <div id="breadcrumb"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="{{route('orders.index')}}" class="current">Order Detail</a></div>
+    <div id="breadcrumb"> <a href="{{url('/admin')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="{{route('orders.index')}}" class="current">Orders</a></div>
     <div class="container-fluid">
         @if(Session::has('message'))
             <div class="alert alert-success text-center" role="alert">
@@ -10,7 +10,7 @@
         @endif
         <div class="widget-box">
             <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-                <h5>Order Detail</h5>
+                <h5>List Order Detail</h5>
             </div>
             <div class="widget-content nopadding">
                 <table class="table table-bordered data-table">
@@ -25,10 +25,9 @@
                     @foreach($orderdetail as $orderdetail)
                         <tr class="gradeC">
                             <td style="vertical-align: middle;">{{$orderdetail->order_id}}</td>
-                            <td style="vertical-align: middle;">{{$orderdetail->product_id}}</td>
+                            <td style="vertical-align: middle;">{{$orderdetail->product_att_id}}</td>
                             <td style="vertical-align: middle;">{{$orderdetail->quantity}}</td>
                             <td style="text-align: center; vertical-align: middle;">
-                                <a href="#" class="btn btn-primary btn-mini">Edit</a>
                                 <a href="javascript:" rel="{{$orderdetail->order_detail_id}}" rel1="delete-orderdetail" class="btn btn-danger btn-mini deleteRecord">Delete</a>
                             </td>
                         </tr>

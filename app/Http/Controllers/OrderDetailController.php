@@ -26,4 +26,6 @@ class OrderDetailController extends Controller
         $delete->delete();
         return redirect()->route('orders.orderdetail')->with('message','Delete Success!');
     }
+
+
 }

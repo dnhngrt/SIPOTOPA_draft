@@ -29,10 +29,27 @@ class AdminOrdersController extends Controller
     public function edit($id)
     {
         $menu_active=0;
-        $categories=Category_model::where('parent_id',0)->pluck('name','id')->all();
-        $edit_product=Products_model::findOrFail($id);
-        $edit_category=Category_model::findOrFail($edit_product->categories_id);
-        return view('backEnd.products.edit',compact('edit_product','menu_active','categories','edit_category'));
+        $edit_orders=Orders_model::findOrFail($id);
+        return view('backEnd.orders.edit',compact('edit_orders','menu_active'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $update_orders=Orders_model::findOrFail($id);
+        $this->validate($request,[
+            'address'=>'required|min:5',
+            'city'=>'required',
+            'state'=>'required',
+            'pincode'=>'required',
+            'mobile'=>'required|numeric',
+        ]);
+        //dd($request->all());die();
+        $input_data=$request->all();
+        if(empty($input_data['status'])){
+            $input_data['status']=0;
+        }
+        $update_orders->update($input_data);
+        return redirect()->route('orders.index')->with('message','Updated Success!');
     }
 
     public function changeStatus($id){
