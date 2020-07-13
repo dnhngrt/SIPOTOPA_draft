@@ -20,7 +20,7 @@
                         <li><a href="{{route('product.index')}}">List Products</a></li>
                     </ul>
                 </li>
-                <li > <a href="{{route('report.index')}}"><i class="icon icon-th-list"></i> <span>Report</span></a>
+                <li class="{{$menu_active==5? ' active':''}}"> <a href="{{route('report.index')}}"><i class="icon icon-th-list "></i> <span>Report</span></a>
                 </li>
                 <!--li class="submenu {{$menu_active==5? ' active':''}}"> <a href="#"><i class="icon icon-th-list"></i> <span>Coupons</span></a>
                     <ul>

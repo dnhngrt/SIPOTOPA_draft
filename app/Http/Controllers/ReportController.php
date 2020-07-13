@@ -16,21 +16,21 @@ class ReportController extends Controller
 {
     public function index()
     {
-        $menu_active = 0;
+        $menu_active = 5;
         $order = Report_model::all();
         return view('backEnd.report.index', compact('menu_active', 'order'));
     }
 
     public function cetak_pdf()
     {
-        $menu_active = 0;
+        $menu_active = 5;
         set_time_limit(180);
         $order = Report_model::all();
         //$order = DB::table('orders')->select('created_at','id','name','grand_total')->get();
         $pdf = PDF::loadView('backEnd.report.pdf', compact('menu_active', 'order'));
         $pdf->loadView('backEnd.report.pdf', compact('menu_active', 'order'));
 
-        return $pdf->stream('download.pdf');
+        return $pdf->stream('Report.pdf');
 
         // $pdf = App::make('dompdf.wrapper');
         // dd($pdf->output());

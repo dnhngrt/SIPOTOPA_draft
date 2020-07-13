@@ -17,7 +17,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $menu_active=3;
+        $menu_active=4;
         $i=0;
         $products=Products_model::orderBy('created_at','desc')->get();
         return view('backEnd.products.index',compact('menu_active','products','i'));
@@ -30,7 +30,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $menu_active=3;
+        $menu_active=4;
         $categories=Category_model::where('parent_id',0)->pluck('name','id')->all();
         return view('backEnd.products.create',compact('menu_active','categories'));
     }
@@ -88,7 +88,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $menu_active=3;
+        $menu_active=4;
         $categories=Category_model::where('parent_id',0)->pluck('name','id')->all();
         $edit_product=Products_model::findOrFail($id);
         $edit_category=Category_model::findOrFail($edit_product->categories_id);

@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $menu_active=0;
+        $menu_active=3;
         $categories=Category_model::all();
         return view('backEnd.category.index',compact('menu_active','categories'));
     }
@@ -27,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $menu_active=2;
+        $menu_active=3;
         $plucked=Category_model::where('parent_id',0)->pluck('name','id');
         $cate_levels=['0'=>'Main Category']+$plucked->all();
         return view('backEnd.category.create',compact('menu_active','cate_levels'));
@@ -79,7 +79,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $menu_active=0;
+        $menu_active=3;
         $plucked=Category_model::where('parent_id',0)->pluck('name','id');
         $cate_levels=['0'=>'Main Category']+$plucked->all();
         $edit_category=Category_model::findOrFail($id);

@@ -15,7 +15,7 @@ class OrderDetailController extends Controller
 {
     public function index()
     {
-        $menu_active = 0;
+        $menu_active = 2;
         $orderdetail = OrderDetail_model::all();
         return view('backEnd.orders.orderdetail', compact('menu_active', 'orderdetail'));
     }

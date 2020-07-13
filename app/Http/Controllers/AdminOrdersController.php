@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Session;
 class AdminOrdersController extends Controller
 {
     public function index(){
-        $menu_active=0;
+        $menu_active=2;
         $order=Orders_model::all();
         return view('backEnd.orders.index',compact('menu_active','order'));
     }
@@ -28,7 +28,7 @@ class AdminOrdersController extends Controller
 
     public function edit($id)
     {
-        $menu_active=0;
+        $menu_active=2;
         $edit_orders=Orders_model::findOrFail($id);
         return view('backEnd.orders.edit',compact('edit_orders','menu_active'));
     }

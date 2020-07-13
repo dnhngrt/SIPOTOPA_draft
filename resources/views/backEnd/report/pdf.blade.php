@@ -9,11 +9,9 @@
             </div>
         @endif
         <div class="widget-box">
-            <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-                <h5>Report List</h5>
-            </div>
+
             <div class="widget-content nopadding">
-                <table class="table table-bordered data-table">
+                <table class="table table-bordered">
                     <thead>
                     <tr>
                         <th>Date</th>
@@ -33,7 +31,6 @@
                     @endforeach
                     </tbody>
                 </table>
-                <a href="/report/cetak_pdf" class="btn btn-primary" >CETAK PDF</a>
             </div>
         </div>
     </div>
