@@ -13,7 +13,7 @@
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form"><!--confirmation form-->
                     <h2>Payment Confirmation</h2>
-                    <form action="{{url('/payment-confirm')}}" method="post" class="form-horizontal">
+                    <form action="{{url('/payment-confirm')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <input type="text" placeholder="Order Id" name="order_id"/>
                         <input type="file" name="image" id="image"/>
