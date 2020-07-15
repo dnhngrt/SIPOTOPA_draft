@@ -13,6 +13,13 @@ class PaymentConfirmController extends Controller
         $payments=PaymentConfirm_model::all();
         return view('frontEnd.payment_confirm',compact('payments'));
     }
+
+    public function list(){
+        $menu_active=2;
+        $payments=PaymentConfirm_model::all();
+        return view('backEnd.orders.paymentconfirmation',compact('menu_active','payments'));
+    }
+
     public function paymentconfirm(Request $request){
         $this->validate($request,[
             'order_id'=>'required|numeric',

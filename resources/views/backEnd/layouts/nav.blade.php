@@ -6,6 +6,7 @@
                     <ul>
                         <li><a href="{{route('orders.index')}}">List Order</a></li>
                         <li><a href="{{route('orderdetail.index')}}">List Order Detail</a></li>
+                        <li><a href="{{url('/admin/paymentconfirm')}}">List Payment Confirmation</a></li>
                     </ul>
                 </li>
                 <li class="submenu {{$menu_active==3? ' active':''}}"> <a href="#"><i class="icon icon-th-list"></i> <span>Categories</span></a>

@@ -9,7 +9,7 @@
             </div>
         @endif
         <div class="widget-box">
-        <a href="{{ route('cetakPdf')}}" class="btn btn-primary" target="_blank">CETAK PDF</a>
+        <a href="{{ route('cetakPdf')}}" class="btn btn-primary" target="_blank">Download</a>
 
             <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
                 <h5>Report List</h5>

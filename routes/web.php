@@ -62,6 +62,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     /// Orders Area
     Route::resource('/orders', 'AdminOrdersController');
     Route::resource('/orderdetail', 'OrderDetailController');
+    Route::get('/paymentconfirm', 'PaymentConfirmController@list');
     Route::get('delete-orderdetail/{order_detail_id}', 'OrderDetailController@destroy');
     Route::get('delete-order/{id}', 'AdminOrdersController@destroy');
     Route::get('change-status/{id}', [
