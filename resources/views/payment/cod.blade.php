@@ -4,8 +4,9 @@
 @endsection
 @section('content')
     <div class="container">
-        <h3 class="text-center">YOUR ORDER HAS BEEN PLACED</h3>
+        <h3 class="text-center">YOUR ORDER HAS BEEN RECORDED</h3>
         <p class="text-center">Thanks for your Order that use Options on Bank Transfer</p>
+        <p class="text-center">This Your Order ID (<b>{{$user_order->id}}</b>)</p>
         <p class="text-center">You can make payments through the following bank</p>
         <div class="category-tab shop-details-tab"><!--Bank-tab-->
             <div class="col-sm-12">

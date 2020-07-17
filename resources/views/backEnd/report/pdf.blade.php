@@ -30,6 +30,18 @@
                         </tr>
                     @endforeach
                     </tbody>
+                    <tfoot>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr class="gradeC">
+                            <td style="font-weight: bold; " colspan="3">Grand Total</td>
+                            <td style="vertical-align: middle;">{{$order->sum('grand_total')}}</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>

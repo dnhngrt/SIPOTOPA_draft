@@ -24,7 +24,7 @@ class OrderDetailController extends Controller
     {
         $delete=OrderDetail_model::findOrFail($order_detail_id);
         $delete->delete();
-        return redirect()->route('orders.orderdetail')->with('message','Delete Success!');
+        return back()->with('message','Deleted Success!');
     }
 
 

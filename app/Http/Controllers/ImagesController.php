@@ -67,7 +67,7 @@ class ImagesController extends Controller
      */
     public function show($id)
     {
-        $menu_active =3;
+        $menu_active =4;
         $product=Products_model::findOrFail($id);
         $imageGalleries=ImageGallery_model::where('products_id',$id)->get();
         return view('backEnd.products.add_images_gallery',compact('menu_active','product','imageGalleries'));

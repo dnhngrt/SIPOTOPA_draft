@@ -18,7 +18,8 @@
                     <tr>
                         <th>Order ID</th>
                         <th>Product ID</th>
-                        <th>Quantity</th>  
+                        <th>Quantity</th>
+                        <th>Action</th>  
                     </tr>
                     </thead>
                     <tbody>

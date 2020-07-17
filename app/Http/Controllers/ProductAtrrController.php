@@ -53,7 +53,7 @@ class ProductAtrrController extends Controller
      */
     public function show($id)
     {
-        $menu_active =3;
+        $menu_active =4;
         $attributes=ProductAtrr_model::where('products_id',$id)->get();
         $product=Products_model::findOrFail($id);
         return view('backEnd.products.add_pro_atrr',compact('menu_active','product','attributes'));

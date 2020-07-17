@@ -24,7 +24,7 @@ class AdminOrdersController extends Controller
     {
         $delete=Orders_model::findOrFail($id);
         $delete->delete();
-        return redirect()->route('backEnd.orders.index')->with('message','Delete Success!');
+        return back()->with('message','Deleted Success!');
     }
 
     public function edit($id)

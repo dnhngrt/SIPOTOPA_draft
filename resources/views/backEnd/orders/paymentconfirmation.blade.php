@@ -18,6 +18,7 @@
                     <tr>
                         <th>Order ID</th>
                         <th>image</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -29,18 +30,18 @@
                             <a href="#myModal{{$payments->order_id}}" data-toggle="modal" class="btn btn-info btn-mini">View</a>
                             </td>
                         </tr>
-                        {{--Pop Up Model for View Product--}}
+                        {{--Pop Up Model for View Payment Confirmation--}}
                         <div id="myModal{{$payments->order_id}}" class="modal hide">
                             <div class="modal-header">
                                 <button data-dismiss="modal" class="close" type="button">×</button>
                                 <h3>Payment Confirmation</h3>
                             </div>
                             <div class="modal-body">
-                                <div class="text-center"><img src="{{url('/storage/payment-confirm/',$payments->image)}}" width="100" alt="Payment Confirmation"></div>
-                                <p class="text-center">{{$payments->order_id}}</p>
+                                <div class="text-center"><img src="{{url('/storage/payment-confirm/',$payments->image)}}" width="500" alt="Payment Confirmation"></div>
+                                <p class="text-center">Order ID {{$payments->order_id}}</p>
                             </div>
                         </div>
-                        {{--Pop Up Model for View Product--}}
+                        {{--Pop Up Model for Payment Confirmation--}}
                     @endforeach
                     </tbody>
                 </table>
