@@ -26,7 +26,7 @@
                             <td style="vertical-align: middle;">{{$payments->order_id}}</td>
                             <td style="vertical-align: middle;">{{$payments->image}}</td>
                             <td style="text-align: center; vertical-align: middle;">
-                            <a href="#myM.odal$payments->order_id}}" data-toggle="modal" class="btn btn-info btn-mini">View</a>
+                            <a href="#myModal{{$payments->order_id}}" data-toggle="modal" class="btn btn-info btn-mini">View</a>
                             </td>
                         </tr>
                         {{--Pop Up Model for View Product--}}
@@ -49,7 +49,7 @@
     </div>
 @endsection
 @section('jsblock')
-<script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/jquery.ui.custom.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/jquery.uniform.js')}}"></script>
