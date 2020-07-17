@@ -51,7 +51,8 @@ class OrdersController extends Controller
     }
     public function cod(){
         $user_order=Orders_model::where('users_id',Auth::id())->first();
-        return view('payment.cod',compact('user_order'));
+        $last_row=DB::table('orders')->orderBy('id', 'DESC')->first();
+        return view('payment.cod',compact('user_order','last_row'));
     }
     public function paypal(Request $request){
         $who_buying=Orders_model::where('users_id',Auth::id())->first();

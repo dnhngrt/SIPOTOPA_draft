@@ -16,7 +16,7 @@ class AdminOrdersController extends Controller
 {
     public function index(){
         $menu_active=2;
-        $order=Orders_model::all();
+        $order=Orders_model::orderBy('created_at','desc')->get();
         return view('backEnd.orders.index',compact('menu_active','order'));
     }
 
