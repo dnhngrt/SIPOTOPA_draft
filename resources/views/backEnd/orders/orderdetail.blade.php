@@ -15,11 +15,12 @@
             <div class="widget-content nopadding">
                 <table class="table table-bordered data-table">
                     <thead>
-                    <tr>
-                        <th>Order ID</th>
-                        <th>Product ID</th>
-                        <th>Quantity</th>  
-                    </tr>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Product ID</th>
+                            <th>Quantity</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody>
                     @foreach($orderdetail as $orderdetail)
