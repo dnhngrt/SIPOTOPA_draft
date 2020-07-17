@@ -45,7 +45,7 @@
                             <td style="vertical-align: middle;">{{$order->country}}</td>
                             <td style="vertical-align: middle;">{{$order->mobile}}</td>
                             <td style="vertical-align: middle;">{{$order->order_status}}</td>
-                            <td style="vertical-align: middle;">{{$order->grand_total}}</td>
+                            <td style="vertical-align: middle;">{{number_format($order->grand_total,2)}}</td>
                             <td style="text-align: center; vertical-align: middle;">
                                 <a href="{{route('change-status', $order->id)}}" name="cstatus" class="btn btn-info btn-mini" value="Lunas" type="hidden">Change Status</a>
                                 <a href="{{route('orders.edit',$order->id)}}" class="btn btn-primary btn-mini">Edit</a>
