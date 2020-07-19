@@ -16,7 +16,7 @@ class AdminOrdersController extends Controller
 {
     public function index(){
         $menu_active=2;
-        $order=Orders_model::all();
+        $order=Orders_model::orderBy('created_at','desc')->get();
         return view('backEnd.orders.index',compact('menu_active','order'));
     }
 
@@ -24,7 +24,7 @@ class AdminOrdersController extends Controller
     {
         $delete=Orders_model::findOrFail($id);
         $delete->delete();
-        return redirect()->route('backEnd.orders.index')->with('message','Delete Success!');
+        return back()->with('message','Deleted Success!');
     }
 
     public function edit($id)

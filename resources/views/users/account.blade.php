@@ -17,22 +17,27 @@
                         {{method_field('PUT')}}
                         <legend>Account Profile</legend>
                         <div class="form-group {{$errors->has('name')?'has-error':''}}">
+                        <label for="name">name:</label>
                             <input type="text" class="form-control" name="name" id="name" value="{{$user_login->name}}" placeholder="Name">
                             <span class="text-danger">{{$errors->first('name')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('address')?'has-error':''}}">
+                        <label for="address">address:</label>
                             <input type="text" class="form-control" value="{{$user_login->address}}" name="address" id="address" placeholder="Address">
                             <span class="text-danger">{{$errors->first('address')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('city')?'has-error':''}}">
+                        <label for="city">city:</label>
                             <input type="text" class="form-control" name="city" value="{{$user_login->city}}" id="city" placeholder="City">
                             <span class="text-danger">{{$errors->first('city')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('state')?'has-error':''}}">
+                        <label for="state">state:</label>
                             <input type="text" class="form-control" name="state" value="{{$user_login->state}}" id="state" placeholder="State">
                             <span class="text-danger">{{$errors->first('state')}}</span>
                         </div>
                         <div class="form-group">
+                        <label for="country">country:</label>
                             <select name="country" id="country" class="form-control">
                                 @foreach($countries as $country)
                                     <option value="{{$country->country_name}}" {{$user_login->country==$country->country_name?' selected':''}}>{{$country->country_name}}</option>
@@ -40,10 +45,12 @@
                             </select>
                         </div>
                         <div class="form-group {{$errors->has('pincode')?'has-error':''}}">
+                        <label for="pincode">pincode:</label>
                             <input type="text" class="form-control" name="pincode" value="{{$user_login->pincode}}" id="pincode" placeholder="Pincode">
                             <span class="text-danger">{{$errors->first('pincode')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('mobile')?'has-error':''}}">
+                        <label for="mobile">mobile:</label>
                             <input type="text" class="form-control" name="mobile" value="{{$user_login->mobile}}" id="mobile" placeholder="Mobile">
                             <span class="text-danger">{{$errors->first('mobile')}}</span>
                         </div>
@@ -61,16 +68,19 @@
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         {{method_field('PUT')}}
                         <div class="form-group {{$errors->has('password')?'has-error':''}}">
+                        <label for="password">Old password:</label>
                             <input type="password" class="form-control" name="password" id="password" placeholder="Old Password">
                             @if(Session::has('oldpassword'))
                                 <span class="text-danger">{{Session::get('oldpassword')}}</span>
                             @endif
                         </div>
                         <div class="form-group {{$errors->has('newPassword')?'has-error':''}}">
+                        <label for="newPassword">New password:</label>
                             <input type="password" class="form-control" name="newPassword" id="newPassword" placeholder="New Password">
                             <span class="text-danger">{{$errors->first('newPassword')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('newPassword_confirmation')?'has-error':''}}">
+                        <label for="newPassword_confirmation">Confirm password:</label>
                             <input type="password" class="form-control" name="newPassword_confirmation" id="newPassword_confirmation" placeholder="Confirm Password">
                             <span class="text-danger">{{$errors->first('newPassword_confirmation')}}</span>
                         </div>

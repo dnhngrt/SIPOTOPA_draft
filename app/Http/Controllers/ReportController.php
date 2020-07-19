@@ -30,7 +30,7 @@ class ReportController extends Controller
         $pdf = PDF::loadView('backEnd.report.pdf', compact('menu_active', 'order'));
         $pdf->loadView('backEnd.report.pdf', compact('menu_active', 'order'));
 
-        return $pdf->stream('Report.pdf');
+        return $pdf->download('Report.pdf');
 
         // $pdf = App::make('dompdf.wrapper');
         // dd($pdf->output());

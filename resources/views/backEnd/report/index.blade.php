@@ -21,7 +21,7 @@
                         <th>Date</th>
                         <th>Order ID</th>
                         <th>Username</th>
-                        <th>Total Transaksi</th>
+                        <th>Total Transaction</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -30,10 +30,22 @@
                             <td style="vertical-align: middle;">{{$order->created_at}}</td>
                             <td style="vertical-align: middle;">{{$order->id}}</td>
                             <td style="vertical-align: middle;">{{$order->name}}</td>
-                            <td style="vertical-align: middle;">{{$order->grand_total}}</td>
+                            <td style="vertical-align: middle;">{{number_format($order->grand_total,2)}}</td>
                         </tr>
                     @endforeach
                     </tbody>
+                    <tfoot>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr class="gradeC">
+                            <td style="font-weight: bold; " colspan="3">Grand Total</td>
+                            <td style="vertical-align: middle;">{{number_format($order->sum('grand_total'),2)}}</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>

@@ -90,13 +90,13 @@
                                         <p>{{$cart_data->product_code}} | {{$cart_data->size}}</p>
                                     </td>
                                     <td class="cart_price">
-                                        <p>IDR {{$cart_data->price}}</p>
+                                        <p>IDR {{number_format($cart_data->price,2)}}</p>
                                     </td>
                                     <td class="cart_quantity">
                                         <p>{{$cart_data->quantity}}</p>
                                     </td>
                                     <td class="cart_total">
-                                        <p class="cart_total_price">IDR {{$cart_data->price*$cart_data->quantity}}</p>
+                                        <p class="cart_total_price">IDR {{number_format($cart_data->price*$cart_data->quantity,2)}}</p>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -106,7 +106,7 @@
                                         <table class="table table-condensed total-result">
                                             <tr>
                                                 <td>Cart Sub Total</td>
-                                                <td>IDR {{$total_price}}</td>
+                                                <td>IDR {{number_format($total_price,2)}}</td>
                                             </tr>
                                             @if(Session::has('discount_amount_price'))
                                                 <tr class="shipping-cost">
@@ -120,7 +120,7 @@
                                             @else
                                                 <tr>
                                                     <td>Total</td>
-                                                    <td><span>IDR {{$total_price}}</span></td>
+                                                    <td><span>IDR {{number_format($total_price,2)}}</span></td>
                                                 </tr>
                                             @endif
                                         </table>
